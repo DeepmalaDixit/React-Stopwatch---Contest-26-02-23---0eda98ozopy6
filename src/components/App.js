@@ -20,7 +20,7 @@ const App = () => {
   },[running]);
   
   function handleLap() {
-    SetLap ([ ...laps, currentTime])
+    setLaps([ ...laps, currentTime])
     setLapvisi(true)
   }
 
