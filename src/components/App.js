@@ -6,7 +6,7 @@ const App = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [laps, setLaps] = useState([]);
   const [running, setRunning] = useState(false);
-  const[lapvisi, setLapvisi] = useState(false);
+  const[lapvisi, setlapvisi] = useState(false);
   useEffect(() => {
     let interval;
     if(running) {
@@ -19,9 +19,9 @@ const App = () => {
     return () => clearInterval(interval);
   },[running]);
   
-  function handleLap() {
-    setLaps([ ...laps, currentTime])
-    setLapvisi(true)
+  function handleLap(){
+    setLaps([...laps, currentTime])
+    setlapvisi(true)
   }
 
   return (
