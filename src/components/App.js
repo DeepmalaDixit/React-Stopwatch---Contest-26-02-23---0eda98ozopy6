@@ -1,10 +1,28 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import '../styles/App.css';
 const App = () => {
   const startTime = useRef(0);
   const intervalRef = useRef(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [laps, setLaps] = useState([]);
+  const [running, setRunning] = useState(false);
+  const[lapvisi, setLapvisi] = useState(false);
+  useEffect(() => {
+    let interval;
+    if(running) {
+      interval = setInterval(() =>{
+        setCurrentTime(prevTime) => prevTime + 0.10);
+      }, 10);
+    }else if(!running) {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  },[running]);
+  
+  function handleLap() {
+    SetLap ([ ...laps, currentTime])
+    setLapvisi(true)
+  }
 
   return (
     <div id="main">
