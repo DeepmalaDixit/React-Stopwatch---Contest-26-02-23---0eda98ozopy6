@@ -6,23 +6,24 @@ const App = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [laps, setLaps] = useState([]);
   const [running, setRunning] = useState(false);
-  const[lapvisi, setlapvisi] = useState(false);
+  const [lapvisi, setlapvisi] = useState(false);
   useEffect(() => {
     let interval;
-    if(running) {
-      interval = setInterval(() =>{
-        setCurrentTime(prevTime) => prevTime + 0.10);
+    if (running) {
+      interval = setInterval(() => {
+        setCurrentTime((prevTime) => prevTime + .010);
       }, 10);
-    }else if(!running) {
+    } else if (!running) {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  },[running]);
-  
+  }, [running]);
+    
   function handleLap(){
-    setLaps([...laps, currentTime])
+    setLaps([...laps,currentTime])
     setlapvisi(true)
   }
+
 
   return (
     <div id="main">
